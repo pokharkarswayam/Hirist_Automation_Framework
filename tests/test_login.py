@@ -13,7 +13,7 @@ class Test_Login:
         login_page.open_url(test_data["base_url"])
         username = test_data["login_data"]["user_type"]["email"]
         password = test_data["login_data"]["user_type"]["password"]
-        log.info("sending username password")
+        log.info("sending username and password")
         login_page.login(username,password)
         log.info("verifying successfully valid user login ")
         if user_type == "valid_user":

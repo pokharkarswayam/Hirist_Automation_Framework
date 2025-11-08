@@ -1,5 +1,7 @@
 import pytest
 from pages.jobfeed_page import Jobfeed
+import logging
+from utils.logger import get_logger
 
 
 class Test_Apply:
