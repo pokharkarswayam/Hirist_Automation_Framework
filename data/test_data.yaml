@@ -1,0 +1,17 @@
+base_url: "https://www.hirist.tech/"
+
+login_data:
+  valid_user:
+    email: "vivek.pokharkar@gmail.com"
+    password: "Logic#01"
+
+  invalid_user:
+    email: "vivek.pokharkar"
+    password: "Logic#01"
+
+  invalid_pass:
+    email: "vivek.pokharkar@gmail.com"
+    password: "Testit123"
+
+Browser:
+    browser: "chrome"
