@@ -11,4 +11,7 @@ class Test_Apply:
         obj_jobfeed.select_checkboxes()
         obj_jobfeed.click_apply_btn()
 
-
+    def test_verify_posting_dropdown(self,browser):
+        obj_jobfeed = Jobfeed(browser)
+        length = obj_jobfeed.find_length_posting_dropdown()
+        assert length == 5 , "options are not correct"
