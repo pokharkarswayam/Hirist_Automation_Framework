@@ -1,7 +1,10 @@
+import logging
+from itertools import count
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-
+from selenium.webdriver.support.select import Select
 from pages.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -9,12 +12,19 @@ from selenium.webdriver.support import expected_conditions as EC
 class Jobfeed(BasePage):
     cb = (By.XPATH,"//input[@type='checkbox']//parent::span")
     apply_btn = (By.XPATH,"//button[text()='Apply All']")
+    posting_dropdown = (By.XPATH,"//div[@data-name='posting']")
 
     def __init__(self,driver):
         super().__init__(driver)
 
     def find_checkboxes(self):
         return self.find_elements(self.cb)
+
+    def find_posting_dropdown(self):
+        return self.find_element(self.posting_dropdown)
+
+    def find_length_posting_dropdown(self):
+        return Select(self.find_posting_dropdown()).options
 
     def select_checkboxes(self):
         try:
